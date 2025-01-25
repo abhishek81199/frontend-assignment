@@ -5,6 +5,7 @@
   justify-content: center;
   width: 100%;
   gap: 6rem;
+  padding: 1rem;
 }
 
 .table-container {
@@ -16,12 +17,12 @@
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  overflow-x: auto;
 }
 
 h1 {
   color: #449e48;
-  /* color: #333; */
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: initial;
   font-weight: bold;
   margin-bottom: 20px;
@@ -47,7 +48,7 @@ h1 {
 }
 
 .project-table th {
-  font-size: 1.1rem;
+  font-size: 1rem;
   background-color: #f7f8fb;
   color: #6b7280;
   font-weight: 600;
@@ -115,4 +116,53 @@ h1 {
 .pagination .page-number:hover {
   background-color: #007bff;
   color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .table-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .project-table th,
+  .project-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .project-table th,
+  .project-table td {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .pagination .prev,
+  .pagination .next,
+  .pagination .page-number {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
 }
