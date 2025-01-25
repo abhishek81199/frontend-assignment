@@ -1,0 +1,118 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  gap: 6rem;
+}
+
+.table-container {
+  width: 80%;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  color: #449e48;
+  /* color: #333; */
+  font-size: 4rem;
+  font-family: initial;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.project-table {
+  width: 100%;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e7e7e7 !important;
+}
+
+.project-table th,
+.project-table td {
+  padding: 12px;
+  font-family: math;
+}
+
+.project-table th.sortable {
+  cursor: pointer;
+}
+
+.project-table th {
+  font-size: 1.1rem;
+  background-color: #f7f8fb;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.project-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.project-table tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.pagination {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination .prev,
+.pagination .next {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #449e48;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination .prev:hover,
+.pagination .next:hover {
+  background-color: #449e48;
+  color: white;
+}
+
+.pagination .prev:disabled,
+.pagination .next:disabled {
+  background-color: #f1f1f1;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination .page-number {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #449e48;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination .page-number.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination .page-number:hover {
+  background-color: #007bff;
+  color: white;
+}
