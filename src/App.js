@@ -69,35 +69,38 @@ const App = () => {
 
   const totalPages = Math.ceil(projects.length / itemsPerPage);
 
-  const getPageNumbers = () => {
-    const pageNumbers = [1];
-    const maxVisiblePages = 4;
+const getPageNumbers = () => {
+  const pageNumbers = [];
+  const maxVisiblePages = 4;
 
-    if (currentPage > 3) {
-      pageNumbers.push("...");
-    }
+  // Always include the first page
+  pageNumbers.push(1);
 
-    let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 2);
-    let endPage = Math.min(startPage + maxVisiblePages - 2, totalPages - 1);
+  // Add ellipsis if current page is beyond the third page
+  if (currentPage > 3) {
+    pageNumbers.push("...");
+  }
 
-    if (endPage - startPage < maxVisiblePages - 2) {
-      startPage = Math.max(endPage - (maxVisiblePages - 2), 2);
-    }
+  // Determine the range of pages to show
+  let startPage = Math.max(currentPage - 1, 2);
+  let endPage = Math.min(currentPage + 1, totalPages - 1);
 
-    for (let i = startPage; i <= endPage; i++) {
-      pageNumbers.push(i);
-    }
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i);
+  }
 
-    if (endPage < totalPages - 1) {
-      pageNumbers.push("...");
-    }
+  // Add ellipsis if there are more pages beyond the current range
+  if (endPage < totalPages - 1) {
+    pageNumbers.push("...");
+  }
 
-    if (totalPages > 1) {
-      pageNumbers.push(totalPages);
-    }
+  // Always include the last page if it's not already included
+  if (totalPages > 1) {
+    pageNumbers.push(totalPages);
+  }
 
-    return pageNumbers;
-  };
+  return pageNumbers;
+};
 
   const lastIndex = currentPage * itemsPerPage;
   const firstIndex = lastIndex - itemsPerPage;
