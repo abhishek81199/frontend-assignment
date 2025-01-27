@@ -108,13 +108,13 @@ h1 {
 }
 
 .pagination .page-number.active {
-  background-color: #007bff;
+  background-color: #449e48;
   color: white;
-  border-color: #007bff;
+  border-color: #449e48;
 }
 
 .pagination .page-number:hover {
-  background-color: #007bff;
+  background-color: #449e48;
   color: white;
 }
 
